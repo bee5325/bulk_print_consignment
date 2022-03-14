@@ -1,0 +1,279 @@
+@page consignment {
+    size: Citylink consignment;
+    margin: 0;
+}
+
+@page packlist {
+    size: A4;
+    margin: 0.2in;
+}
+
+@page inovoice {
+    size: A4;
+    margin: 0;
+}
+
+.print-page {
+    width: 8.26in;
+    height: 3.98in;
+    overflow: hidden;
+    text-align: right;
+    padding-top: 0.2in;
+    padding-bottom: 0.2in;
+    padding-right: 0.22in;
+    font-family: monospace;
+    break-inside: avoid;
+    font-size: 0.35cm;
+    page: consignment;
+    white-space: pre-line;
+    user-select: none;
+    position: relative;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen {
+    .print-page {
+        border: 1px grey solid;
+    }
+    .pack-list {
+        column-count: 2;
+    }
+    .commercial-invoice-page {
+        border: 1px grey solid;
+    }
+}
+
+@media only print {
+    .commercial-invoice-page input {
+        border: none;
+    }
+}
+
+.print-page .id {
+    height: 1rem;
+}
+
+.print-page .receiver-address {
+    width: 42%;
+    padding-left: 57%;
+    text-align: left;
+    padding-top: 0.98in;
+    height: 1.00in;
+}
+
+.print-page .lower-part {
+    display: flex;
+    justify-content: space-between;
+}
+
+.print-page .consignment-remark {
+    flex-basis: 40%;
+    padding-left: 10%;
+    text-align: left;
+}
+
+.name-phone {
+    display: flex;
+    flex-basis: 40%;
+    justify-content: space-between;
+}
+
+.date {
+    position: absolute;
+    left: 37%;
+    bottom: 0.23in;
+}
+
+/* PACK LIST */
+.pack-list {
+    page: packlist;
+    user-select: none;
+}
+
+.pack-list * {
+    font-size: 12px;
+}
+
+.pack-list h1 {
+    font-size: 16px;
+}
+
+.pack-table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+.pack-table > tbody > tr {
+    break-inside: avoid;
+}
+
+.pack-table > tr > td, .pack-table > tbody > tr > td {
+    border-top: black 1px dashed;
+    border-bottom: black 1px dashed;
+}
+
+.pack-table > tbody > tr, .pack-table > tbody > tr > td {
+    padding: 10px 20px;
+}
+
+.pack-table .combined-orders {
+    border: black solid 1px;
+}
+
+.pack-table .spacing {
+    content: "";
+    display: block;
+    height: 10px;
+}
+
+.pack-list .pack-list-remark {
+    white-space: break-spaces;
+    padding: 5px;
+}
+
+.pack-list input::-webkit-outer-spin-button,
+.pack-list input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.pack-list input[type=number] {
+    padding: 0;
+    margin:0;
+    width: 0.8rem;
+    text-align: right;
+    border:none;
+    display: inline;
+    vertical-align: top;
+}
+
+.pack-list input[type=checkbox] {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+.pack-list input[type=checkbox]:not(:checked) {
+    display: none;
+}
+
+.order-items {
+    width: 100%;
+}
+
+.order-items .reserve-status-col, .order-items .total-quantity-col {
+    width: 12%;
+}
+
+.order-items .reserve-action-col {
+    width: 15%;
+    text-align: center;
+}
+
+.order-items .reserve-item-col {
+    width: 64%;
+}
+
+.pack-list .order-items td {
+    padding: 2px;
+}
+
+.order-items strong {
+    border: 2px solid black;
+    font-weight: bold;
+}
+
+.order-items tr.reserve-done {
+    text-decoration: line-through;
+}
+
+.order-items .item-meta {
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+/* COMMERCIAL INVOICE */
+.commercial-invoice-page {
+    width: 210mm;
+    height: 290mm;
+    padding: 20mm;
+    font-size: 12px;
+    box-sizing: border-box;
+    font-family: Arial;
+    break-inside: avoid;
+    page: invoice;
+}
+
+.commercial-invoice-page h1,
+.commercial-invoice-page h2
+{
+    text-align: center;
+    margin: 0;
+}
+
+.commercial-invoice-page h2 {
+    font-size: 0.9rem;
+}
+
+.commercial-invoice-page h3 {
+    margin: 0;
+    margin-bottom: 1mm;
+}
+
+.commercial-invoice-page div {
+    margin: 5mm 0;
+}
+
+.commercial-invoice-page table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+}
+
+.commercial-invoice-page table th,
+.commercial-invoice-page table td {
+    border: 1px solid black;
+    padding: 2mm;
+}
+
+.commercial-invoice-page .products {
+    height: 20mm;
+}
+
+.commercial-invoice-page .declare-statement {
+    text-align: justify;
+}
+
+.commercial-invoice-page .shipper-signature-container {
+    width: 50%;
+}
+
+.commercial-invoice-page .shipper-signature-container p {
+    margin-top: 0;
+    text-align: center;
+}
+
+.commercial-invoice-page .shipper-signature {
+    width: 100%;
+    height: 20mm;
+    border-bottom: 1px dashed black;
+    margin: 1mm;
+}
+
+.commercial-invoice-page .shipper-signature-table td {
+    border: none;
+    padding: 3mm 0 0 0;
+}
+.commercial-invoice-page .shipper-signature-table td:last-child {
+    border-bottom: 1px dashed black;
+}
+
+.commercial-invoice-page .shipper-signature-table {
+    margin-bottom: 5mm;
+}

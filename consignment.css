@@ -1,0 +1,401 @@
+/* Remove arrows at the right of number input */
+.print-list-table input::-webkit-outer-spin-button,
+.print-list-table input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.print-list-table input[type=number] {
+  -moz-appearance: textfield;
+}
+
+p.order-statuses {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 960px;
+}
+
+p.order-statuses .order-status {
+    flex-basis: 20%;
+    background: transparent;
+    border: none;
+    align-items: center;
+}
+
+div.resume-previous-session #by-order-status-container, 
+div.resume-previous-session #by-order-id-container {
+    display: none;
+}
+
+div.by-order-id #by-order-status-container,
+div.by-order-id #resume-previous-session-container {
+	display: none;
+}
+
+div.by-order-status #by-order-id-container,
+div.by-order-status #resume-previous-session-container {
+	display: none;
+}
+
+textarea#exclude-list, textarea#get-order-id {
+	min-height: 80px;
+}
+
+.status-update {
+	padding-left: 10px;
+	line-height: 1.9rem;
+    vertical-align: middle;
+}
+
+.tab-nav, .get-order-modes {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-nav label, .get-order-modes label {
+    padding: 5px 20px;
+    background: lightgray;
+}
+
+.tab-nav label.active, .get-order-modes label.active {
+    background: #494949;
+    color: white;
+}
+
+.bp-settings #bp-prefix {
+    max-width: 300px;
+}
+
+/**
+ * Orders page
+ **/
+#products-list {
+	width: 300px;
+	height: 200px;
+}
+
+.print-list-table {
+	border-collapse: collapse;
+}
+
+.print-list-table tr td {
+    transition: background 0.2s, opacity 0.2s;
+}
+
+th, td {
+	border: 1px grey solid;
+	padding: 5px;
+	height: 1px;
+	position: relative;
+}
+
+.print-list-table .row-order {
+    background: #ffbf4430;
+}
+
+
+.print-list-table .default-row-ship {
+	background: #add8e630;
+}
+
+.print-list-table .default-row-reserved {
+	background: #ffc0cb30;
+}
+
+.print-list-table .row-ship .receiver-name,
+.print-list-table .row-ship .receiver-phone,
+.print-list-table .row-ship .receiver-address,
+.print-list-table .row-ship .remarks,
+.print-list-table .row-process .pack-items,
+.print-list-table .row-process .next-actions {
+	background: lightblue;
+}
+
+.print-list-table .row-reserved {
+	background: pink;
+}
+
+.print-list-table .combined-orders {
+    border: 2px black solid;
+}
+
+.print-list-table tr.row-combine-others td {
+    text-align: center;
+}
+
+.print-list-table .done {
+	background: darkgray;
+}
+
+.print-list-table .hide, .print-list-table .row-id-empty-0 {
+	display: none;
+	opacity: 0;
+}
+
+.action {
+    white-space: nowrap;
+    padding: 1px 0;
+}
+
+.action .remove-row {
+    margin-top: 15px;
+    display: block;
+    color: red;
+}
+/* .print-list-table label[for^="ship-checkbox"], .print-list-table label[for^="reserve-checkbox"] { */
+/* 	position: absolute; */
+/* 	top: 0; */
+/* 	left: 0; */
+/* 	right: 0; */
+/* 	bottom: 0; */
+/* } */
+
+.print-list-table textarea {
+    font-family: monospace;
+    background: transparent;
+    border: none;
+    resize: none;
+    border: 1px transparent solid;
+	border-right: 10px transparent solid;
+    transition: border 0.3s;
+	height: 100%;
+	min-height: 10rem;
+	width: 100%;
+	display: block;
+}
+
+.print-list-table textarea:hover:enabled {
+    border: rgba(0,0,0,0.5) 1px solid;
+    border-right: rgba(0,0,0,0.5) 10px solid;
+}
+
+.print-list-table textarea.pack-list-remark, .print-list-table textarea.consignment-remark {
+	border: rgba(0,0,0,0.5) 1px solid;
+	min-height: 5rem;
+}
+
+.print-list-table .current-status {
+	font-weight: bold;
+}
+
+.settings, .print-list-wrapper {
+	margin: 20px 0;
+}
+
+.receiver-name, .receiver-phone, .receiver-address {
+	padding: 0;
+}
+
+.print-list-table .order-id-col {
+    text-align: center;
+    min-width: 5rem;
+}
+
+.print-list-table .order-id-col .date-created {
+    font-size: 0.6rem;
+}
+
+.print-list-table .receiver-name-textarea, .print-list-table .receiver-phone-textarea {
+	min-width: 8rem;
+}
+
+.print-list-table .receiver-address-textarea {
+	min-width: 20rem;
+}
+
+.print-list-table .remarks, .print-list-table .pack-items {
+    max-width: 25rem;
+}
+
+.print-list-table input.reserve-item-count {
+    width: 2rem;
+}
+
+.print-list-table strong {
+	border: 2px solid black;
+	font-weight: bold;
+}
+
+.print-list-table .customer-notes {
+    font-weight: bold;
+}
+
+.print-list-table .printed-note {
+    color: brown;
+    font-weight: bold;
+}
+
+.print-list-table .items-count {
+    width: 25px;
+}
+
+.print-list-table .items-total {
+    width: 50px;
+}
+
+.print-list-table .items-count, .print-list-table .items-total {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    text-align: right;
+}
+
+.remarks ul {
+    max-height: 20rem;
+    overflow: auto;
+}
+
+.remarks ul li {
+	padding: 5px 0;
+}
+
+.order-items {
+	width: 100%;
+	display: block;
+    max-height: 20rem;
+    overflow: auto;
+}
+
+.order-items td {
+	border: none;
+}
+
+.order-items .reserve-action-col, .order-items .reserve-status-col, .order-items .total-quantity-col {
+	width: 15%;
+}
+
+.order-items .reserve-item-col {
+	width: 55%;
+}
+
+.order-items tr.reserve-done {
+    text-decoration: line-through;
+    color: rgba(44,51,56,.5);
+}
+
+.order-items .item-meta {
+    font-weight: bold;
+}
+
+.instruction {
+	margin: 10px;
+}
+
+.instruction .step.active {
+	background: lightblue;
+}
+
+.instruction .step {
+	background: white;
+    padding: 5px 10px;
+	margin: 5px 0;
+    border-radius: 10px;
+	display: inline-block;
+}
+
+.instruction .step-arrow {
+	display: inline;
+	padding: 0 10px;
+}
+
+.navigation .button-to-top, .navigation .button-to-bottom {
+    position: fixed;
+    right: 30px;
+    z-index: 99;
+    background: cornflowerblue;
+    color: white;
+    height: 40px;
+    width: 50px;
+}
+
+.navigation .button-to-top:focus, .navigation .button-to-bottom:focus {
+    background: cornflowerblue;
+    color: white;
+}
+
+.navigation .button-to-top {
+    bottom: 70px;
+}
+
+.navigation .button-to-bottom {
+    bottom: 20px;
+}
+
+#save-status {
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+    padding: 10px 20px;
+    background: #b5ec92;
+    border-radius: 10px;
+    color: white;
+    border: #96d486 1px solid;
+    transition: all 0.2s;
+}
+
+#save-status.saving {
+    background: #ffce73;
+    border-color: #f5a063;
+}
+
+#save-status.error {
+    background: #ec9292;
+    border-color: #cf3e3e;
+}
+
+#save-status.disabled {
+    background: #b9b9b9;
+    border-color: #8d8d8d;
+}
+
+.history-table {
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+input#search-history {
+    border-radius: 2px;
+    border: 1px solid lightgrey;
+    padding: 5px;
+    width: 25rem;
+    margin: 10px 0;
+}
+
+.history-table table {
+    border-collapse: collapse;
+}
+
+.history-table th {
+    border: none;
+    background: #606060;
+    color: white;
+}
+
+.history-table > tbody:nth-child(2n+1) {
+    background: gainsboro;
+}
+
+.history-table > tbody:nth-child(2n) {
+    background: white;
+}
+
+.history-table td {
+    padding: 5px;
+    border: none;
+    border-bottom: 1px lightgrey solid;
+}
+
+.history-table tr {
+    transition: background 0.2s;
+}
+
+.history-table tbody tr:hover {
+    background: #dcf0f6
+}
+
+.history-table .items-reserved td {
+    border: none;
+}
+
+.history-table .items-reserved tr:not(:last-child) {
+    border-bottom: 1px lightgrey solid;
+}
